@@ -1,0 +1,230 @@
+/* Sales Page Styles */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.sale-detail-modal {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.sale-detail-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.sale-detail-modal .modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sale-detail-modal .modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.sale-detail-modal .modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sale-detail-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.detail-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-section h3 {
+    font-size: 0.95rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.detail-label {
+    color: #718096;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-value {
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.detail-value.invoice-number {
+    font-family: 'Courier New', monospace;
+    background: #f7fafc;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.detail-value.discount {
+    color: #e53e3e;
+}
+
+.detail-value.total-amount {
+    font-size: 1.25rem;
+    color: #667eea;
+    font-weight: 700;
+}
+
+.total-row {
+    background: #f7fafc;
+    margin: 0.5rem -1rem -0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Items Table */
+.items-table-container {
+    overflow-x: auto;
+    margin: 0 -0.5rem;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.items-table th {
+    background: #f7fafc;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #4a5568;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.items-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+}
+
+.items-table tbody tr:hover {
+    background: #f7fafc;
+}
+
+.items-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Payment Section */
+.payment-section {
+    background: #f7fafc;
+    margin: 0 -1.5rem;
+    padding: 1.5rem !important;
+    border-bottom: none !important;
+}
+
+/* Badge Styles */
+.badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-success {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.badge-warning {
+    background: #fefcbf;
+    color: #744210;
+}
+
+.badge-danger {
+    background: #fed7d7;
+    color: #822727;
+}
+
+.badge-info {
+    background: #bee3f8;
+    color: #2a4365;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .sale-detail-modal {
+        max-height: 95vh;
+        margin: 0.5rem;
+    }
+
+    .sale-detail-content {
+        padding: 1rem;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .items-table th,
+    .items-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
