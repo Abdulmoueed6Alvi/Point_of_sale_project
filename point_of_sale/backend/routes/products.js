@@ -20,6 +20,13 @@ router.get('/', auth, async (req, res) => {
 
         const query = {};
 
+        // By default, only show active products unless explicitly requested
+        if (isActive !== '') {
+            query.isActive = isActive === 'true';
+        } else {
+            query.isActive = true; // Default to only active products
+        }
+
         if (search) {
             query.$or = [
                 { name: { $regex: search, $options: 'i' } },
@@ -29,7 +36,6 @@ router.get('/', auth, async (req, res) => {
         }
 
         if (category) query.category = category;
-        if (isActive !== '') query.isActive = isActive === 'true';
 
         const products = await Product.find(query)
             .limit(limit * 1)
